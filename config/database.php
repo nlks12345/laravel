@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
     $host = $url["host"];
     $username = $url["user"];
     $password = $url["pass"];
-    $database = substr($host["path"], 1);
+    $database = substr($url["path"], 1);
 
 return [
 
