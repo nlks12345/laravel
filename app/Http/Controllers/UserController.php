@@ -30,7 +30,7 @@ class UserController extends Controller
 
       public function show(){
 
-        $users = UserResource::collection(User::paginate(5));
+        $users = User::all());
         
         return response()->json($users);
        // return response()->json('harlor');
