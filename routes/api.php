@@ -27,7 +27,7 @@ use App\User;
 Route::post('/login','App\Http\Controllers\LoginController@login');
 //});
 
-Route::post('/user',[UserController::class,'create']);
+Route::post('/user/create',[UserController::class,'create']);
 Route::get('/user',[UserController::class,'show']);
 Route::get('/user/{id}',[UserController::class,'showById']);
 Route::put('/user/{id}',[UserController::class,'updateById']);
