@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use App\Models\User;
-
+use App\Http\Resources\User as UserResource;
 
 class UserController extends Controller
 {
@@ -30,7 +30,7 @@ class UserController extends Controller
 
       public function show(){
 
-        $users = User::paginate(5);
+        $users = UserResource::collection(User::paginate(5));
         
         return response()->json($users);
        // return response()->json('harlor');
