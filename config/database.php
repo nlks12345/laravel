@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Str;
 
-  $url = parse_url(getenv("mysql://bff3ce8dd90913:095313a1@us-cdbr-east-03.cleardb.com/heroku_db77ff64308fa98?reconnect=true"));
+  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $host = $url["us-cdbr-east-03.cleardb.net"];
-    $username = $url["bff3ce8dd90913"];
-    $password = $url["095313a1"];
+    $host = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
     $database = substr($host["path"], 1);
 
 return [
