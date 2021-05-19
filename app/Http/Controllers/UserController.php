@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use App\Models\User;
 use App\Http\Resources\User as UserResource;
+use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class UserController extends Controller
 {
+
+   
+
      public function create(Request $request){
 
         $users = new User;
@@ -17,6 +22,9 @@ class UserController extends Controller
         $users->email = $request->input('email');
         $users->password = $request->input('password');
         
+
+        
+
         $users->save();
         //$json = json_encode($api);
         //return json, NOT view

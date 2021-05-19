@@ -24,8 +24,11 @@ use App\User;
 //});
 
 //Route::prefix('/user')->group( function(){
-Route::post('/login','App\Http\Controllers\LoginController@login');
+Route::post('/register','App\Http\Controllers\LoginController@register');
 //});
+
+Route::post('/login','App\Http\Controllers\LoginController@login');
+Route::get('/login','App\Http\Controllers\LoginController@login');
 
 Route::post('/user/create',[UserController::class,'create']);
 Route::get('/user',[UserController::class,'show']);
