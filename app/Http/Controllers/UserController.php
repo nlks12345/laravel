@@ -23,7 +23,7 @@ class UserController extends Controller
         $users->password = $request->input('password');
         
 
-        
+
 
         $users->save();
         //$json = json_encode($api);
@@ -38,7 +38,7 @@ class UserController extends Controller
 
       public function show(){
 
-        $users = User::all());
+        $users = User::all();
         
         return response()->json($users);
        // return response()->json('harlor');
