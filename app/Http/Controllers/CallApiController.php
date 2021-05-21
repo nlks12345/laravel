@@ -6,36 +6,36 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Contracts\Support\Jsonable;
 class CallApiController extends Controller
 {
      public function getAll(){
 
-        //$data = Http::get('http://127.0.0.1:8000/api/user/')->json();
+        $data = Http::get('https://first-laravel-nlks.herokuapp.com/api/user/')->json();
         
-     
-       // $data = Http::get('/api/user/')->json();
 
-        $client = new \GuzzleHttp\Client([
-            'base_uri' => 'http://localhost:8000',
-            'defaults' => [
-                'exceptions' => false
-            ]   
-        ]);
-
-        if($client){
-
-            $response = $client->get('/api/user/');
+        if($data){
+            return view('users_table',['data'=>$data]);
         }
         else{
-            return view('users_table',['no data']);
-
+            return view('users_table',['data'=>'no data']);
         }
 
-        
-       
-        return view('users_table',['response' => $response['data']]);
+    }
 
+     public function registerView(){
+
+
+        return view('users');
+        
+     }
+
+
+     public function registerAPI(Request $request){
+
+        $data = Http::post('https://first-laravel-nlks.herokuapp.com/api/user/create')->json();
+
+        return "Sucessfull";
      }
 
 

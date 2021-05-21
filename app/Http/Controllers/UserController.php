@@ -21,8 +21,6 @@ class UserController extends Controller
         $users->name = $request->input('name');
         $users->email = $request->input('email');
         $users->password = $request->input('password');
-        
-
 
 
         $users->save();
@@ -41,7 +39,7 @@ class UserController extends Controller
         $users = User::all();
         
         return response()->json($users);
-       // return response()->json('harlor');
+       
      }
 
 
