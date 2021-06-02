@@ -14,8 +14,19 @@ use App\Http\Controllers\CallApiController;
 */
 
 Route::get('/', function () {
-    return view('users');
+    return view('login');
 });
 
 Route::get('/users/list', [CallApiController::class,'getAll']);
 
+Route::get('/users/register', [CallApiController::class,'registerView']);
+
+//Route::post('/users/register', [CallApiController::class,'registerAPI']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

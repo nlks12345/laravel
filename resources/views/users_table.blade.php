@@ -42,19 +42,20 @@
                         
                     </tr>
                     </thead>
-                    {{dd($response)}}
                     <tbody>
-                        @foreach($response as $data)
+                        @foreach($data as $users)
+                          
                         <tr>
-                            <td>User ID:</td>
-                            <td>Name</td>
-                            <td>Email</td>
+                            <td>{{$users['id']}}</td>
+                            <td>{{$users['name']}}</td>
+                            <td>{{$users['email']}}</td> 
                         
                         </tr>
-
+                        
                         @endforeach
                     </tbody>
                 </table>
+        
 
         </div>
           
